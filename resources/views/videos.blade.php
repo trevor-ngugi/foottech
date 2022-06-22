@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    .card {
+       margin:auto;
+       width: 100%;
+       padding: 10px;
+      }
+    </style>
+
 </head>
 
 <body>
@@ -48,10 +56,17 @@
         </div>
     </nav>
     @foreach($data as $row)
-    <div class="card" style="width: 18rem;">
-        <video width="320" height="240" autoplay muted>
+    <div class="card" style="width: 21rem;">
+        <video id="myvideo" width="320" height="240" controls>
             <source src="{{asset('upload')}}/{{$row['video']}}" type="video/mp4">
         </video>
+        <script>
+           var vid = document.getElementById("myVideo");
+
+           function myFunction() { 
+            alert(vid.paused);
+            } 
+</script> 
         <div class="card-body">
             <h5 class="card-title">like button,</h5>
             <p class="card-text">caption</p>

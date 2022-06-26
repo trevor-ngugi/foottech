@@ -8,11 +8,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-    .card {
-       margin:auto;
-       width: 100%;
-       padding: 10px;
-      }
+        .card {
+            margin: auto;
+            width: 100%;
+            padding: 10px;
+        }
     </style>
 
 </head>
@@ -31,26 +31,26 @@
                 </li>
             </ul>
             <span class="navbar-text">
-            <ul class="navbar-nav "> 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Team</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Scout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Post</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Message</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">LogOut</a>
-                </li>
-            </ul>
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Scout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Message</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">LogOut</a>
+                    </li>
+                </ul>
             </span>
 
         </div>
@@ -61,12 +61,12 @@
             <source src="{{asset('upload')}}/{{$row['video']}}" type="video/mp4">
         </video>
         <script>
-           var vid = document.getElementById("myVideo");
+            var vid = document.getElementById("myVideo");
 
-           function myFunction() { 
-            alert(vid.paused);
-            } 
-</script> 
+            function myFunction() {
+                alert(vid.paused);
+            }
+        </script>
         <div class="card-body">
             <h5 class="card-title">like button,</h5>
             <p class="card-text">caption</p>

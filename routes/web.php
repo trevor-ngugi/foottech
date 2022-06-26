@@ -22,3 +22,7 @@ Route::get('/index_u',[\App\Http\Controllers\VideoController::class,'index']);
 
 Route::post('/insert_video',[\App\Http\Controllers\VideoController::class,'insert'])->name('insert.file');
 
+Route::get('/learn',[\App\Http\Controllers\HomeController::class,'index']);
+
+Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile']);
+

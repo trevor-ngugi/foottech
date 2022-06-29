@@ -1,8 +1,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="{{asset ('css/style.css')}}">
+        <!--  -->
     </head>
     <body>
+        </div>
+    </nav>
         <div class="drag-area">
             <form method="post" action="{{Route('insert.file')}}" enctype="multipart/form-data">
                 {{csrf_field()}}

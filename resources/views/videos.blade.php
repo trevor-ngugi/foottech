@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset ('css/app.css')}}">
     <style>
     .card {
        margin:auto;
@@ -67,13 +68,16 @@
             alert(vid.paused);
             } 
 </script> 
-        <div class="card-body">
-            <h5 class="card-title">like button,</h5>
+        <div class="card-body" >
+            <h5 class="card-title uppercase mt-15 font-extrabold py-4 px-8 rounded-3xl underline" >like button,</h5>
             <p class="card-text">caption</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
     @endforeach
+    <div>
+        @include('footer')
+    </div>
 </body>
 
 </html>

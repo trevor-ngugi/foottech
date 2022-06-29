@@ -9,7 +9,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   background: #5256ad;
 }
 .drag-area{
@@ -21,4 +21,13 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #grey;
+  color: white;
+  text-align: center;
 }

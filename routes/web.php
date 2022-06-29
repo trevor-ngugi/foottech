@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/fetch_video',[\App\Http\Controllers\VideoController::class,'fetch']);
+Route::get('/fetch_video',[\App\Http\Controllers\VideoController::class,'fetch'])->name('home');
 
-Route::get('/index_u',[\App\Http\Controllers\VideoController::class,'index']);
+Route::get('/index_u',[\App\Http\Controllers\VideoController::class,'index'])->name('postvideo');
 
 Route::post('/insert_video',[\App\Http\Controllers\VideoController::class,'insert'])->name('insert.file');
+
+
+Route::resource('/event', EventController::class);
+
+Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile'])->name('profile');
+
 

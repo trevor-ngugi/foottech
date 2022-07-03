@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,11 @@ Route::get('/index_u',[\App\Http\Controllers\VideoController::class,'index'])->n
 
 Route::post('/insert_video',[\App\Http\Controllers\VideoController::class,'insert'])->name('insert.file');
 
+
+// Route::resource('/event', EventController::class)->name('event');
+
+Route::get('/event',[\App\Http\Controllers\EventController::class,'index'])->name('event');
+
 Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile'])->name('profile');
+
 

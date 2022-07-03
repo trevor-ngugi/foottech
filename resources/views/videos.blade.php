@@ -2,6 +2,7 @@
 @section('content')
 
 
+
 @foreach($data as $row)
 <div class="card" style="width: 21rem;">
     <video id="myvideo" width="320" height="240" controls>
@@ -21,4 +22,8 @@
     </div>
 </div>
 @endforeach
+     <div>
+        @include('footer')
+    </div>
 @endsection
+

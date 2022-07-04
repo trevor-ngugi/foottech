@@ -23,9 +23,18 @@ Route::get('/index_u',[\App\Http\Controllers\VideoController::class,'index'])->n
 
 Route::post('/insert_video',[\App\Http\Controllers\VideoController::class,'insert'])->name('insert.file');
 
-
-Route::resource('/event', EventController::class);
-
 Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile'])->name('profile');
 
+Route::get('/Event', [App\Http\Controllers\EventController::class, 'index'])->name('Event');
+Route::get('events/create', [App\Http\Controllers\EventController::class, 'create'])->name('create');
+Route::post('store', [App\Http\Controllers\EventController::class, 'store'])->name('store');
+Route::get('events/{event}/edit', [App\Http\Controllers\EventController::class, 'edit'])->name('edit');
+Route::get('events/{event}', [App\Http\Controllers\EventController::class, 'show'])->name('show');
+Route::put('events/{event}', [App\Http\Controllers\EventController::class, 'update'])->name('update');
+Route::delete('events/{event}', [App\Http\Controllers\EventController::class, 'destroy'])->name('destroy');
 
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

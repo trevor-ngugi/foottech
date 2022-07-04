@@ -60,7 +60,7 @@
                                 <h6 class="mb-0">Address</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Bay Area, San Francisco, CA
+                                Strathmore University, Madaraka
                             </div>
                         </div>
                         <hr>

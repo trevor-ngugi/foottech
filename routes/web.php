@@ -30,4 +30,8 @@ Route::get('/event',[\App\Http\Controllers\EventController::class,'index'])->nam
 
 Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile'])->name('profile');
 
+Route::middleware('auth')->group(function () {
+    Route::post('like', 'LikeController@like')->name('like');
+    Route::delete('like', 'LikeController@unlike')->name('unlike');
+});
 

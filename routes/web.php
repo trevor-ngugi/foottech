@@ -31,3 +31,7 @@ Route::get('/event',[\App\Http\Controllers\EventController::class,'index'])->nam
 Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile'])->name('profile');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

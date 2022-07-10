@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@extends('layouts.navbar')
 @section('content')
 
 <div class="w-4/5 m-auto text-center">

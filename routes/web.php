@@ -17,7 +17,7 @@ use App\Http\Controllers\EventController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/fetch_video',[\App\Http\Controllers\VideoController::class,'fetch'])->name('home');
+Route::get('/fetch_video',[\App\Http\Controllers\VideoController::class,'fetch'])->name('allvideos');
 
 Route::get('/index_u',[\App\Http\Controllers\VideoController::class,'index'])->name('postvideo');
 

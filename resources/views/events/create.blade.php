@@ -14,7 +14,10 @@
                         </div>
                     @endif
                     
-                    <form action="/store" method="post">
+                    <form action="{{route ('images.store')}}" method="post" enctype="multipart/form-data">
+                        @if($errors->any())
+                           <h4>{{$errors->first()}}</h4>
+                        @endif
                         @csrf
                         <div class="form-group">
                             <label for="">Event Title</label>
@@ -25,11 +28,11 @@
                             <label for="">Event Body</label>
                             <textarea name="body" id="" cols="30" rows="10" class="form-control"></textarea>
                         </div>
-<!-- 
+                       
                         <div class="form-group">
                             <label for="">Image</label>
-                            <input type="file" name="Image" />
-                        </div>  -->
+                            <input type="file" name="image" />
+                        </div>  
 
                         <div class="form-group">
                             <label for="">Publish At</label>
@@ -37,7 +40,10 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary">Submit</button>
+
                     </form>
+                     </table>
+         
                     
                 </div>
             </div>

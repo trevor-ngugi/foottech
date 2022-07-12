@@ -24,16 +24,17 @@ class EventController extends Controller
         $request->validate([
             'title' => 'required',
             'body' => 'required',
-            //'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
         $event = new event();
         $event->title = $request->title;
         $event->body = $request->body;
-        //$event->image = $request->image;
+        $event->image = $request->file('image'); 
         $event->published_at = $request->published_at;
 
         $event->save();
         return redirect('/Event')->with('success','Post created successfully!');
+        return Redirect::back()->withErrors(['msg' => 'The Message']);
     }
 
     public function show(Event $event)
@@ -51,11 +52,11 @@ class EventController extends Controller
         $request->validate([
             'title' => 'required',
             'body' => 'required',
-            //'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
         $event->title = $request->title;
         $event->body = $request->body;
-        //$event->image = $request->image;
+        $event->image = $request->file('image');
         $event->published_at = $request->published_at;
 
         $event->save();

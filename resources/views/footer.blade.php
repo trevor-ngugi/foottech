@@ -7,7 +7,7 @@
 			</h4>
 			<ul class="ul">
 				<li class="li">
-					<a href="/videos">Home</a>
+					<a href="/home">Home</a>
 				</li>
 				<li class="li">
 					<a href="/Event">Events</a>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ImageUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,15 @@ Route::delete('events/{event}', [App\Http\Controllers\EventController::class, 'd
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+//For adding an image
+Route::get('/add-image',[ImageUploadController::class,'addImage'])->name('images.add');
+
+//For storing an image
+Route::post('/store-image',[ImageUploadController::class,'storeImage'])
+->name('images.store');
+
+//For showing an image
+Route::get('/view-image',[ImageUploadController::class,'viewImage'])->name('images.view');

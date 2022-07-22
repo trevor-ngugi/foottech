@@ -1,0 +1,21 @@
+<!--  <tbody>
+                        @foreach($events as $event)
+                        <tr>
+                             <td>{{ $event->id }}</td>
+                            <td>{{ $event->title }}</td>
+                            <td>{{$event->image}}</td>
+                            <td>{{$event->body}}</td>
+                            <td>{{ date('Y-m-d', strtotime($event->published_at)) }}</td>
+                            <td>{{ date('Y-m-d', strtotime($event->created_at)) }}</td>
+                            <td>
+                            <a href="events/{{$event->id}}" class="btn btn-primary">Show</a>
+                            <a href="events/{{$event->id}}/edit" class="btn btn-primary">Edit</a>
+                            <form action="events/{{$event->id}}" method="post" class="d-inline">
+                                {{ csrf_field() }}
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody> -->

@@ -7,10 +7,10 @@
 			</h4>
 			<ul class="ul">
 				<li class="li">
-					<a href="/videos">Home</a>
+					<a href="/home">Home</a>
 				</li>
 				<li class="li">
-					<a href="/event">Events</a>
+					<a href="/Event">Events</a>
 				</li>
 				<li class="li">
 					<a href="">login</a>
@@ -25,3 +25,6 @@
 		Copyright 2022-2022 IsProject. All Rights Reserved
 	</p>
 </footer>
+@section('css')
+<link rel="stylesheet" href="{{asset ('css/app.css')}}">
+@endsection

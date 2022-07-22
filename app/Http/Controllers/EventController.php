@@ -3,85 +3,69 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class EventController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //
     public function index()
     {
-
-        return view('events.index');
-
+        $events = Event::all();
+        return view('events.index', compact('events'));
     }
-    
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('events.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            ]);
+        $event = new event();
+        $event->title = $request->title;
+        $event->body = $request->body;
+        $event->image = $request->file('image'); 
+        $event->published_at = $request->published_at;
+
+        $event->save();
+        return redirect('/Event')->with('success','Post created successfully!');
+        return Redirect::back()->withErrors(['msg' => 'The Message']);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Event $event)
     {
-        //
+        return view('events.show', compact('event'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Event $event)
     {
-        //
+        return view('events.edit', compact('event'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Event $event, Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            ]);
+        $event->title = $request->title;
+        $event->body = $request->body;
+        $event->image = $request->file('image');
+        $event->published_at = $request->published_at;
+
+        $event->save();
+        return redirect('/Event')->with('success','Post updated successfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Event $event)
     {
-        //
+        $event->delete();
+        return redirect('/Event')->with('success','Post deleted successfully!');
     }
 }

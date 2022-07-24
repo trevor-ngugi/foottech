@@ -51,7 +51,7 @@
                             <a class="nav-link" href="{{route('team')}}">Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Scout</a>
+                            <a class="nav-link" href="{{route('scout')}}">Scout</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('event')}}">event</a>
@@ -63,7 +63,7 @@
                             <a class="nav-link" href="{{route('profile')}}">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Message</a>
+                            <a class="nav-link" href="{{route('message')}}">Message</a>
                         </li>
 
                     </ul>

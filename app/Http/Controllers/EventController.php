@@ -31,6 +31,20 @@ class EventController extends Controller
         return view('team.teamprofile');
 
     }
+
+    public function allscout()
+    {
+
+        return view('scout.showscout');
+
+    }
+
+    public function messagescout()
+    {
+
+        return view('message');
+
+    }
     
 
     /**

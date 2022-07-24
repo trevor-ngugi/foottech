@@ -38,3 +38,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //team links
 Route::get('/team',[\App\Http\Controllers\EventController::class,'allteam'])->name('team');
 Route::get('/teamprofile',[\App\Http\Controllers\EventController::class,'profileteam'])->name('teamprofile');
+
+//scout links
+Route::get('/scout',[\App\Http\Controllers\EventController::class,'allscout'])->name('scout');
+
+//messga link
+Route::get('/message',[\App\Http\Controllers\EventController::class,'messagescout'])->name('message');

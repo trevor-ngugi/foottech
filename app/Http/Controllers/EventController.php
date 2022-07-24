@@ -17,6 +17,20 @@ class EventController extends Controller
         return view('events.indexx');
 
     }
+
+    public function allteam()
+    {
+
+        return view('team.showteam');
+
+    }
+
+    public function profileteam()
+    {
+
+        return view('team.teamprofile');
+
+    }
     
 
     /**

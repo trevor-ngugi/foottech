@@ -35,3 +35,6 @@ Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile']
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//team links
+Route::get('/team',[\App\Http\Controllers\EventController::class,'allteam'])->name('team');
+Route::get('/teamprofile',[\App\Http\Controllers\EventController::class,'profileteam'])->name('teamprofile');

@@ -44,3 +44,13 @@ Route::get('/scout',[\App\Http\Controllers\EventController::class,'allscout'])->
 
 //messga link
 Route::get('/message',[\App\Http\Controllers\EventController::class,'messagescout'])->name('message');
+
+//scout trial route
+Route::get('/scouttutorial', [\App\Http\Controllers\ScoutController::class, 'index']);
+Route::get('/scouttutorial/{scout}', [\App\Http\Controllers\ScoutController::class, 'show']);
+
+Route::get('/scouttutorial/create/post', [\App\Http\Controllers\ScoutController::class, 'create']); //shows create post form
+Route::post('/scouttutorial/create/post',[\App\Http\Controllers\ScoutController::class, 'store']); //saves the created post to the databse
+Route::get('/scouttutorial/{scout}/edit',[\App\Http\Controllers\ScoutController::class, 'edit']); //shows edit post form
+Route::put('/scouttutorial/{scout}/edit',[\App\Http\Controllers\ScoutController::class, 'update']); //commits edited post to the database 
+Route::delete('/scouttutorial/{scout}',  [\App\Http\Controllers\ScoutController::class, 'destroy']); //deletes post from the database

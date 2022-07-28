@@ -20,7 +20,7 @@ class ScoutFactory extends Factory
             // $table->text('bio');
             'scout_name' => $this->faker->sentence, //Generates a fake sentence
             'role' => $this->faker->sentence,//Generates a User from factory and extracts id
-            'bio' => $this->faker->paragraph(30),
+            'team' => $this->faker->sentence,
         ];
     }
 }

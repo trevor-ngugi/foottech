@@ -39,13 +39,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/team',[\App\Http\Controllers\EventController::class,'allteam'])->name('team');
 Route::get('/teamprofile',[\App\Http\Controllers\EventController::class,'profileteam'])->name('teamprofile');
 
-//scout links
-Route::get('/scout',[\App\Http\Controllers\EventController::class,'allscout'])->name('scout');
+
 
 //messga link
 Route::get('/message',[\App\Http\Controllers\EventController::class,'messagescout'])->name('message');
 
 //scout trial route
+Route::get('/scout',[\App\Http\Controllers\EventController::class,'allscout'])->name('scout');
+Route::get('/scout2', [\App\Http\Controllers\ScoutController::class, 'index']);
 Route::get('/scouttutorial', [\App\Http\Controllers\ScoutController::class, 'index']);
 Route::get('/scouttutorial/{scout}', [\App\Http\Controllers\ScoutController::class, 'show']);
 

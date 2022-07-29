@@ -43,11 +43,11 @@ class ScoutController extends Controller
         $newscout = Scout::create([
             'scout_name' => $request->scout_name,
             'role' => $request->role,
-            'bio' => $request->bio,
+            'team' => $request->team,
             'user_id' => 1
         ]);
 
-        return redirect('scouttutorial/' . $newscout->id);
+        return redirect('scout/' );
     }
 
     /**
@@ -90,10 +90,12 @@ class ScoutController extends Controller
         //
         $scout->update([
             'scout_name' => $request->scout_name,
-            'bio' => $request->bio
+            'role' => $request->role,
+            'team' => $request->team
         ]);
 
-        return redirect('scouttutorial/' . $scout->id);
+        // return redirect('scouttutorial/' . $scout->id);
+        return redirect('scout' );
     }
 
     /**

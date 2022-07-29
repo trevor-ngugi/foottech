@@ -65,6 +65,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('message')}}">Message</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('addScout')}}">Add scout</a>
+                        </li>
 
                     </ul>
 

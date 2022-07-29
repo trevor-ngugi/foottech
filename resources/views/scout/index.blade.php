@@ -37,11 +37,12 @@
                     <h3 class="name">{{ ucfirst($scout->scout_name) }}</h3>
                     <p class="title">{{ ucfirst($scout->role) }}</p>
                     <p class="description">{{ ucfirst($scout->team) }} </p>
+                    <a href="/scout/{{ $scout->id }}/edit" class="btn btn-outline-primary">Edit Post</a>
                     <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
                 </div>
             </div>
             @empty
-            <p class="text-warning">No blog Posts available</p>
+            <p class="text-warning">No scouts available</p>
             @endforelse
         </div>
     </div>

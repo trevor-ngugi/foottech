@@ -41,7 +41,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form_email">video </label>
-                                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Submit video *" required="required" data-error="Valid email is required.">
 
                                         </div>
                                     </div>
@@ -49,7 +49,7 @@
                                         <div class="form-group">
                                             <label for="form_need">To *</label>
                                             <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
-                                                <option value="" selected disabled>--Select Your Issue--</option>
+                                                <option value="" selected disabled>--Select Scout/Team manager--</option>
                                                 <option>Request Invoice for order</option>
                                                 <option>Request order status</option>
                                                 <option>Haven't received cashback yet</option>

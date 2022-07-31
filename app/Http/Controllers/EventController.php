@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Team;
+use App\Models\TeamManager;
 
 class EventController extends Controller
 {
@@ -44,6 +46,17 @@ class EventController extends Controller
 
         return view('message');
 
+    }
+    public function getTeamManager($tm_id)
+    {
+        // Passing user id into find()
+        return TeamManager::find($tm_id)->name;
+    }
+
+    public function getTeam($team_id)
+    {
+        // Passing phone id into find()
+        return Team::find($team_id)->team_name;
     }
     
 

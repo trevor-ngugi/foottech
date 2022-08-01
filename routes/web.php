@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,3 +64,8 @@ Route::get('/scouttutorial/{scout}', [\App\Http\Controllers\ScoutController::cla
 Route::get('/scouttutorial/{scout}/edit',[\App\Http\Controllers\ScoutController::class, 'edit']); //shows edit post form
 Route::put('/scouttutorial/{scout}/edit',[\App\Http\Controllers\ScoutController::class, 'update']); //commits edited post to the database 
 Route::delete('/scouttutorial/{scout}',  [\App\Http\Controllers\ScoutController::class, 'destroy']); //deletes post from the database
+
+
+//team links
+Route::get('get-TM/{id}', [EventController::class, 'getTeamManager']);
+Route::get('get-team/{id}', [EventController::class, 'getTeam']);

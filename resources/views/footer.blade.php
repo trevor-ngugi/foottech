@@ -25,3 +25,7 @@
 		Copyright 2022-2022 IsProject. All Rights Reserved
 	</p>
 </footer>
+@section('css')
+<link rel="stylesheet" href="{{asset ('css/footer.css')}}">
+
+@endsection

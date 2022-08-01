@@ -188,7 +188,7 @@
     });
 </script>
 
-@include('footer')
+
 </div>
 @endsection
 @section('css')

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\TeamDetailController;
 use App\Http\Controllers\SiteController;
 
 /*
@@ -58,5 +59,9 @@ Route::delete('/scouttutorial/{scout}',  [\App\Http\Controllers\ScoutController:
 
 
 //team links
-Route::get('get-TM/{id}', [EventController::class, 'getTeamManager']);
-Route::get('get-team/{id}', [EventController::class, 'getTeam']);
+Route::get('get-TM/{id}', [EventController::class, 'getTeamManager']);//get team mangers details
+Route::get('get-team/{id}', [EventController::class, 'getTeam']);//get teams details
+
+//team details
+Route::get('get-teamdetail/{id}', [TeamDetailController::class, 'getTeamDetail']);//gets team details
+Route::get('get-team2/{id}', [ TeamDetailController::class, 'getTeam']);//get teams details

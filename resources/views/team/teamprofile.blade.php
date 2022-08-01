@@ -166,8 +166,7 @@
         </div>
         <!-- End of gallery -->
 
-        <div class="loader"></div>
-
+        
     </div>
     <!-- End of container -->
 

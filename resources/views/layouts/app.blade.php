@@ -54,7 +54,7 @@
                             <a class="nav-link" href="{{route('scout')}}">Scout</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('event')}}">event</a>
+                            <a class="nav-link" href="{{route('images.view')}}">event</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('postvideo')}}">Post</a>

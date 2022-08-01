@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\TeamDetailController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\ImageUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,28 +26,25 @@ Route::get('/index_u',[\App\Http\Controllers\VideoController::class,'index'])->n
 
 Route::post('/insert_video',[\App\Http\Controllers\VideoController::class,'insert'])->name('insert.file');
 
-
-// Route::resource('/event', EventController::class)->name('event');
-
-Route::get('/event',[\App\Http\Controllers\EventController::class,'index'])->name('event');
-
 Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile'])->name('profile');
 
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\videoController::class, 'fetch'])->name('home');
 //team links
 Route::get('/team',[\App\Http\Controllers\EventController::class,'allteam']);
 Route::get('/teamprofile',[\App\Http\Controllers\EventController::class,'profileteam'])->name('teamprofile');
+Route::get('/team',[\App\Http\Controllers\ImageUploadController::class,'allteam'])->name('team');
+Route::get('/teamprofile',[\App\Http\Controllers\ImageUploadController::class,'profileteam'])->name('teamprofile');
 
 //team links with db
 Route::get('/teamdb',[\App\Http\Controllers\TeamController::class,'index'])->name('team');//displaying alll teams in the system
 Route::get('get-singleTeam/{id}', [\App\Http\Controllers\TeamController::class,'getTeam']);
 
 //scout links
-Route::get('/scout',[\App\Http\Controllers\EventController::class,'allscout'])->name('scout');
+Route::get('/scout',[\App\Http\Controllers\ImageUploadController::class,'allscout'])->name('scout');
 
 //messga link
 Route::get('/message',[\App\Http\Controllers\EventController::class,'messagescout'])->name('message');
@@ -79,3 +77,24 @@ Route::get('get-team/{id}', [EventController::class, 'getTeam']);//get teams det
 //team details
 Route::get('get-teamdetail/{id}', [TeamDetailController::class, 'getTeamDetail']);//gets team details
 Route::get('get-team2/{id}', [ TeamDetailController::class, 'getTeam']);//get teams details
+Route::get('/message',[\App\Http\Controllers\ImageUploadController::class,'messagescout'])->name('message');
+
+
+//For adding an event
+Route::get('/add-image',[ImageUploadController::class,'addImage'])->name('images.add');
+
+//For storing an event
+Route::post('/store-image',[ImageUploadController::class,'storeImage'])
+->name('images.store');
+
+//For showing events
+Route::get('/events',[ImageUploadController::class,'viewImage'])->name('images.view');
+
+//For editing an event
+Route::get('events/{imageData}/edit', [App\Http\Controllers\ImageUploadController::class, 'edit'])->name('edit');
+
+//For showing an event
+Route::get('events/{imageData}/show', [App\Http\Controllers\ImageUploadController::class, 'show'])->name('show');
+
+Route::put('events/{imageData}', [App\Http\Controllers\ImageUploadController::class, 'update']);
+Route::delete('events/{imageData}', [App\Http\Controllers\ImageUploadController::class, 'destroy']);

@@ -38,10 +38,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //team links
-Route::get('/team',[\App\Http\Controllers\EventController::class,'allteam'])->name('team');
+Route::get('/team',[\App\Http\Controllers\EventController::class,'allteam']);
 Route::get('/teamprofile',[\App\Http\Controllers\EventController::class,'profileteam'])->name('teamprofile');
 
+//team links with db
+Route::get('/teamdb',[\App\Http\Controllers\TeamController::class,'index'])->name('team');//displaying alll teams in the system
+Route::get('get-singleTeam/{id}', [\App\Http\Controllers\TeamController::class,'getTeam']);
 
+//scout links
+Route::get('/scout',[\App\Http\Controllers\EventController::class,'allscout'])->name('scout');
 
 //messga link
 Route::get('/message',[\App\Http\Controllers\EventController::class,'messagescout'])->name('message');

@@ -60,6 +60,22 @@ Route::put('/scout/{scout}/edit',[\App\Http\Controllers\ScoutController::class, 
 //Route::delete('/scout/{scout}',  [\App\Http\Controllers\ScoutController::class, 'destroy']);
 Route::get('/scout/{scout}', [\App\Http\Controllers\ScoutController::class, 'show']);
 
+//trial for view different
+//route for admin
+Route::group(['prefix' => 'admin','middleware'=>['auth','admin']], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('admin.dashboard');
+});
+
+//route for executive
+Route::group(['prefix' => 'scout','middleware'=>['auth','scout']], function () {
+    Route::get('dashboard', 'DashboardController@scout')->name('scout.dashboard');
+});
+
+//route for user
+Route::group(['prefix' => 'teammanager','middleware'=>['auth','teammanager']], function () {
+    Route::get('dashboard', 'DashboardController@teammanager')->name('teammanager.dashboard');
+});
+
 
 
 Route::get('/scouttutorial/{scout}', [\App\Http\Controllers\ScoutController::class, 'show']);
